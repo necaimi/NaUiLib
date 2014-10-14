@@ -6,8 +6,9 @@ var Fn = Function, global = (new Fn("return this"))();
     }
 
     global.UiLib.SelectBox = {
-        checkedHandler : function(event, state){
-        },
+        checkedHandler : function(event, state){},
+        
+        InitlizeComplete: function(event, state){},
         
         Initlize : function(){
             
@@ -16,18 +17,45 @@ var Fn = Function, global = (new Fn("return this"))();
         this._oldIndex = null;
         this._itemmap = {};
         this._isMutux = true;
+        
+        //private:
+        this._selectItem = function(obj){
+        obj.check(true);
+        
+        if(this._oldIndex != null && this._isMutux){
+        this._itemmap["item-"+this._oldIndex].check(false);
+        }
+        
+        this._oldIndex = obj._index;
+         };
+         this._cancelItem = function(obj){
+            obj.check(false);
+        };
+        
+        $(this._obj).bind("InitlizeComplete", function(event, state){
+             var ret = UiLib.SelectBox.InitlizeComplete.apply(state.target, arguments);
+            if(ret){
+                return ret;
+            }else{
+                return (new $.Deferred()).resolve().promise();
+            }
+        });
+         
         };
     
     SelectBox.prototype.getObj = function(){
         return this._obj;
     };
     
-    SelectBox.prototype.setMutux = function(b){
-        this._isMutux = b;
+    SelectBox.prototype.setMutux = function(b_mutux){
+        this._isMutux = b_mutux;
+    };
+    
+    SelectBox.prototype.getInnerObj = function(){
+        return this;
     };
     
     SelectBox.prototype.addItem = function(obj, cfn, index){
-
         if(!obj){
             return null;
         }
@@ -63,45 +91,34 @@ var Fn = Function, global = (new Fn("return this"))();
         return _item;
     };
     
-    SelectBox.prototype._selectItem = function(obj){
-        obj.check(true);
-        
-        if(this._oldIndex != null && this._isMutux){
-        this._itemmap["item-"+this._oldIndex].check(false);
-        }
-        
-        this._oldIndex = obj._index;
-    };
-    
     SelectBox.prototype.selectIndex = function(index){
            var curObj =  this._itemmap["item-"+index];
            this._selectItem(curObj);
-            
      };
         
-    SelectBox.prototype.cancelInex = function(index){
+    SelectBox.prototype.cancelIndex = function(index){
           var curObj =  this._itemmap["item-"+index];
            this._cancelItem(curObj);
     };
             
-    SelectBox.prototype._cancelItem = function(obj){
-            obj.check(false);
-    };
+   
             
     SelectBox.prototype.getItems = function(){
-        var retItem = [];
+        var retItem = new Array;
         if(this._isMutux){
             retItem.push(this._itemmap["item-"+this._oldIndex]);
             return retItem;
         }else{
-            var i = 0, len = this._itemmap.length;
+            var i = 0, len = this._itemmap;
+            console.log(this._itemmap);
             for(i; i < len ; i++){
                 var curItem = this._itemmap["item-"+i];
                 if(curItem.checked){
                     retItem.push(curItem);
+                      console.log(retItem);
                 }
             }
-            
+          
             return curItem;
             
         }
@@ -134,16 +151,14 @@ var Fn = Function, global = (new Fn("return this"))();
          });
          
          this.prototype = _selectBox;
+         $selbox.triggerHandler("InitlizeComplete", {"target":_selectBox});
          
-         var defWparam = $selbox.attr("def-select");
-         _selectBox.selectIndex(defWparam);
      });
     });
 
         }
     };
 
-    UiLib.SelectBox.Initlize();
 
    
     

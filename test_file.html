@@ -1,4 +1,7 @@
-<link rel="stylesheet" type="text/css" href="http://image.benlailife.com/images/gz/special/sytlesheetlib/ztlist_gz.css">
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" type="text/css" href="http://image.benlailife.com/images/gz/special/sytlesheetlib/ztlist_gz.css">
  <style type="text/css">
         .zt_gz{background-color: #FFF;position:relative;}
         .zt_gz .sku{margin: 0px}
@@ -6,6 +9,7 @@
         .zt_gz .sku .main{margin-top: 5px}
         .zt_gz .main{float: left; display: inline}
         .zt_gz .title{margin: 20px 0px 0px 0px}
+        .list{list-style-type: none}
         .list img{vertical-align: bottom}
         .list .cc_buy{position: absolute}
         .cc_buy.right{top: 295px; left: 743px}
@@ -42,13 +46,13 @@
 	.cc_nav{z-index:100;position:absolute;top:460px;left:0;}
 	.fixed{position:fixed;}
     </style>
-<div class="zt_gz" id="container">
-
-    
+    </head>
+    <body>
+        <div class="zt_gz" id="container">
     <div class="sku cc_sp_shop">
         <p class="title"><img lazyload="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/images/spt_12.jpg"/></p>
         <div class="cframe">
-            <ul class="sp_nav" def_select="0">
+            <ul class="sp_nav" def-select="0">
                 <li class="list">
                     <img src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/nav/ytl_on.jpg"/>
                 </li>
@@ -66,21 +70,21 @@
                 <li class="list content relative page">
                     <a href="39397_ProductLink" target="_blank"><img src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/p1.jpg"/></a>
                     <div class="ft_buy">
-                        <ul class="select_box" c-type='selectbox'>
+                        <ul class="select_box" c-type='selectbox' def-select="0" id="sel_1">
                             <li class="list button" data-id="39397" c-type='item'>
-				<img data-status="off" style="display:none;" src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/button/2p.jpg"/>
-                                <img data-status="on" src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/button/2p_on.jpg"/>
+				<img src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/button/2p.jpg"/>
+                                <img src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/button/2p_on.jpg" class="defbutton"/>
                             </li>
                             <li class="list button" data-id="39398" c-type='item'>
-                                <img data-status="off" src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/button/4p.jpg"/>
-				<img data-status="on" style="display:none;" src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/button/4p_on.jpg"/>
+                                <img src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/button/4p.jpg"/>
+				<img src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/button/4p_on.jpg" class="defbutton"/>
                             </li>
                         </ul>
                         <ul class="shop_box">
                             <li class="list" data-id="39397">
                             <p class="price p_rose">39397_CurrentPrice<span class="Concrete-grey">39397_OldPrice</span></p>
                             <div class="button">
-                            <img src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/bt_shop.gif" id="39397_addCart" onclick="AddProductToCart(39397,1)" />
+                            <img src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/bt_shop.gif" id="39397_addCart" onclick=" console.log(sel_1.prototype.getItems())" />
                             <img src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/bt_shop_back.gif" id="39397_back" class="defbutton" />
                             </div>
                             </li>
@@ -97,14 +101,14 @@
                 <li class="list content relative page">
                     <a href="39399_ProductLink" target="_blank"><img src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/p2.jpg"/></a>
                      <div class="ft_buy">
-                        <ul class="select_box" def_select="0" c-type='selectbox'>
+                        <ul class="select_box" def-select="0" c-type='selectbox'>
                             <li class="list button" data-id="39399" c-type='item'>
-                                <img data-status="off" style="display:none;" src="http://image.benlailife.com/images/gz/special/chucheng/1h.jpg"/>
-				<img data-status="on" src="http://image.benlailife.com/images/gz/special/chucheng/1h_on.jpg"/>
+                                <img src="http://image.benlailife.com/images/gz/special/chucheng/1h.jpg"/>
+				<img src="http://image.benlailife.com/images/gz/special/chucheng/1h_on.jpg" class="defbutton"/>
                             </li>
                             <li class="list button" data-id="39400" c-type='item'>
-                                <img data-status="off" src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/button/dh.jpg"/>
-				<img data-status="on" style="display:none;" src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/button/dh_on.jpg"/>
+                                <img src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/button/dh.jpg"/>
+				                <img src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/button/dh_on.jpg" class="defbutton"/>
                             </li>
                         </ul>
                         <ul class="shop_box">
@@ -128,14 +132,14 @@
                 <li class="list content relative page">
                     <a href="39401_ProductLink" target="_blank"><img src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/p3.jpg"/></a>
                      <div class="ft_buy">
-                        <ul class="select_box" def_select="0" c-type='selectbox'>
+                        <ul class="select_box" def-select="0" c-type='selectbox'>
                             <li class="list button" data-id="39401" c-type='item'>
-                                <img data-status="off" style="display:none;" src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/button/75mm.jpg"/>
-				<img data-status="on" src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/button/75mm_on.jpg"/>
+                                <img src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/button/75mm.jpg"/>
+				<img src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/button/75mm_on.jpg" class="defbutton"/>
                             </li>
                             <li class="list button" data-id="39471" c-type='item'>
-                                <img data-status="off" src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/button/80mm.jpg"/>
-				<img data-status="on" style="display:none;" src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/button/80mm_on.jpg"/>
+                                <img src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/button/80mm.jpg"/>
+				<img src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/button/80mm_on.jpg" class="defbutton"/>
                             </li>
                         </ul>
                         <ul class="shop_box">
@@ -159,14 +163,14 @@
                 <li class="list content relative page">
                     <a href="37175_ProductLink" target="_blank"><img src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/p4.jpg"/></a>
                      <div class="ft_buy">
-                        <ul class="select_box" def_select="0" c-type='selectbox'>
+                        <ul class="select_box" def-select="0" c-type='selectbox'>
                             <li class="list button" data-id="37175" c-type='item'>
-                                <img data-status="off" style="display:none;" src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/button/3z.jpg"/>
-				<img data-status="on" src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/button/3z_on.jpg"/>
+                                <img src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/button/3z.jpg"/>
+				<img src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/button/3z_on.jpg" class="defbutton"/>
                             </li>
                             <li class="list button" data-id="11476" c-type='item'>
-                                <img data-status="off" src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/button/4z.jpg"/>
-				<img data-status="on" style="display:none;" src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/button/4z_on.jpg"/>
+                                <img src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/button/4z.jpg"/>
+				<img src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/button/4z_on.jpg" class="defbutton"/>
                             </li>
                         </ul>
                         <ul class="shop_box">
@@ -193,15 +197,28 @@
     
  
     </div>
-    <!-- presale end -->
-</div>
 
 <script type="text/javascript" src="http://www.benlai.com/Scripts/jquery-1.5.1.min.js?v=8.2.47"></script>
 <script type="text/javascript" src="JQ.UI.js"></script>
 <script type="text/javascript">
+    
+    UiLib.SelectBox.Initlize();
     UiLib.SelectBox.checkedHandler = function(event, state){
-        console.log(state);
+        var curImg = $(state.target).find("img");
+        if(state.checked){
+            curImg.attr("src",curImg.attr("src").replace(".jpg","_on.jpg"));
+        }else{
+            curImg.attr("src",curImg.attr("src").replace("_on.jpg",".jpg"));
+        }
     };
+    
+    UiLib.SelectBox.InitlizeComplete = function(event, state){
+       if(state.target.getObj().id == "sel_1"){
+           sel_1.prototype.selectIndex(0);
+           sel_1.prototype.setMutux(false);
+       }
+    }
+      
 </script>
 <script type="text/javascript">
  $(document).ready(function () {
@@ -268,3 +285,6 @@ duration: "6000"
 
 });
 </script>
+    </body>
+</html>
+
