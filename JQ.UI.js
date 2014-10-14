@@ -101,25 +101,21 @@ var Fn = Function, global = (new Fn("return this"))();
            this._cancelItem(curObj);
     };
             
-   
-            
+
     SelectBox.prototype.getItems = function(){
         var retItem = new Array;
         if(this._isMutux){
             retItem.push(this._itemmap["item-"+this._oldIndex]);
             return retItem;
         }else{
-            var i = 0, len = this._itemmap;
-            console.log(this._itemmap);
-            for(i; i < len ; i++){
-                var curItem = this._itemmap["item-"+i];
-                if(curItem.checked){
+            
+            for(var curid in this._itemmap){
+                 var curItem = this._itemmap[curid];
+                if(curItem._checked){
                     retItem.push(curItem);
-                      console.log(retItem);
                 }
-            }
-          
-            return curItem;
+                }
+            return retItem;
             
         }
     };

@@ -214,8 +214,10 @@
     
     UiLib.SelectBox.InitlizeComplete = function(event, state){
        if(state.target.getObj().id == "sel_1"){
-           sel_1.prototype.selectIndex(0);
-           sel_1.prototype.setMutux(false);
+           state.target.selectIndex(1);
+           state.target.setMutux(false);
+       }else{
+           state.target.selectIndex(0);
        }
     }
       
