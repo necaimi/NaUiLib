@@ -52,17 +52,17 @@
     <div class="sku cc_sp_shop">
         <p class="title"><img lazyload="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/images/spt_12.jpg"/></p>
         <div class="cframe">
-            <ul class="sp_nav" def-select="0">
-                <li class="list">
-                    <img src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/nav/ytl_on.jpg"/>
+            <ul class="sp_nav" c-type='selectbox'>
+                <li class="list" c-type='item'>
+                    <img src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/nav/ytl.jpg"/>
                 </li>
-                <li class="list">
+                <li class="list" c-type='item'>
                     <img src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/nav/zxg.jpg"/>
                 </li>
-                <li class="list">
+                <li class="list" c-type='item'>
                     <img src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/nav/sml.jpg"/>
                 </li>
-                <li class="list">
+                <li class="list" c-type='item'>
                     <img src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/nav/sn.jpg"/>
                 </li>
             </ul>
@@ -72,12 +72,12 @@
                     <div class="ft_buy">
                         <ul class="select_box" c-type='selectbox' def-select="0" id="sel_1">
                             <li class="list button" data-id="39397" c-type='item'>
-				<img src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/button/2p.jpg"/>
-                                <img src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/button/2p_on.jpg" class="defbutton"/>
+				<img src="http://image1.benlailife.com/images/gz/special/2014chuchengyushou_syhd/button/2p.jpg"/>
+          
                             </li>
                             <li class="list button" data-id="39398" c-type='item'>
                                 <img src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/button/4p.jpg"/>
-				<img src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/button/4p_on.jpg" class="defbutton"/>
+			
                             </li>
                         </ul>
                         <ul class="shop_box">
@@ -104,11 +104,11 @@
                         <ul class="select_box" def-select="0" c-type='selectbox'>
                             <li class="list button" data-id="39399" c-type='item'>
                                 <img src="http://image.benlailife.com/images/gz/special/chucheng/1h.jpg"/>
-				<img src="http://image.benlailife.com/images/gz/special/chucheng/1h_on.jpg" class="defbutton"/>
+		
                             </li>
                             <li class="list button" data-id="39400" c-type='item'>
                                 <img src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/button/dh.jpg"/>
-				                <img src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/button/dh_on.jpg" class="defbutton"/>
+				
                             </li>
                         </ul>
                         <ul class="shop_box">
@@ -135,11 +135,11 @@
                         <ul class="select_box" def-select="0" c-type='selectbox'>
                             <li class="list button" data-id="39401" c-type='item'>
                                 <img src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/button/75mm.jpg"/>
-				<img src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/button/75mm_on.jpg" class="defbutton"/>
+			
                             </li>
                             <li class="list button" data-id="39471" c-type='item'>
                                 <img src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/button/80mm.jpg"/>
-				<img src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/button/80mm_on.jpg" class="defbutton"/>
+			
                             </li>
                         </ul>
                         <ul class="shop_box">
@@ -166,11 +166,11 @@
                         <ul class="select_box" def-select="0" c-type='selectbox'>
                             <li class="list button" data-id="37175" c-type='item'>
                                 <img src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/button/3z.jpg"/>
-				<img src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/button/3z_on.jpg" class="defbutton"/>
+
                             </li>
                             <li class="list button" data-id="11476" c-type='item'>
                                 <img src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/button/4z.jpg"/>
-				<img src="http://image.benlailife.com/images/gz/special/2014chuchengyushou_syhd/button/4z_on.jpg" class="defbutton"/>
+	
                             </li>
                         </ul>
                         <ul class="shop_box">
@@ -221,26 +221,6 @@
        }
     }
       
-</script>
-<script type="text/javascript">
- $(document).ready(function () {
-     var cIndex=0;
-		 var li=$(".page")[cIndex];
-			$(li).show();
-		 $(".sp_nav li").mouseenter(function () {
-         var index=$(this).index();
-        var cObj= $(".sp_nav li").find('img')[cIndex];
-         cObj=$(cObj);
-         cObj.attr("src",cObj.attr("src").replace("_on.jpg",".jpg"));
-        var obj= $(this).find("img");
-        obj.attr("src",obj.attr("src").replace(".jpg","_on.jpg"));
-			var li=$(".page")[cIndex];
-			$(li).hide();
-			li=$(".page")[index];
-			$(li).show();
-       cIndex=index;
-    });
-});
 </script>
 
 <script type="text/javascript" src="http://image.benlailife.com/SpecialJs/benlai_effects.js"></script>
