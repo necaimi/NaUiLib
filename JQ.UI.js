@@ -17,6 +17,7 @@ var Fn = Function, global = (new Fn("return this"))();
         this._oldIndex = null;
         this._itemmap = {};
         this._isMutux = true;
+        this._hoverselect = false;
         
         //private:
         this._selectItem = function(obj){
@@ -33,7 +34,9 @@ var Fn = Function, global = (new Fn("return this"))();
         };
         
         $(this._obj).bind("InitlizeComplete", function(event, state){
+			
              var ret = UiLib.SelectBox.InitlizeComplete.apply(state.target, arguments);
+			
             if(ret){
                 return ret;
             }else{
@@ -49,6 +52,10 @@ var Fn = Function, global = (new Fn("return this"))();
     
     SelectBox.prototype.setMutux = function(b_mutux){
         this._isMutux = b_mutux;
+    };
+            
+    SelectBox.prototype.setHoverSelect = function(b_hselect){
+        this._hoverselect = b_hselect;
     };
     
     SelectBox.prototype.getInnerObj = function(){
@@ -137,11 +144,9 @@ var Fn = Function, global = (new Fn("return this"))();
         }
     };
     
-
- $(document).ready(function(){
      $("[c-type='selectbox']").each(function(index, element){
          var _selectBox = new SelectBox(this), $selbox = $(this);
-      
+         
          $selbox.find("[c-type='item']").each(function(index, element){
              _selectBox.addItem(this, UiLib.SelectBox.checkedHandler, index);
          });
@@ -150,7 +155,7 @@ var Fn = Function, global = (new Fn("return this"))();
          $selbox.triggerHandler("InitlizeComplete", {"target":_selectBox});
          
      });
-    });
+ 
 
         }
     };

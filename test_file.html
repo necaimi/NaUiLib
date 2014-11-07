@@ -202,8 +202,10 @@
 <script type="text/javascript" src="JQ.UI.js"></script>
 <script type="text/javascript">
     
-    UiLib.SelectBox.Initlize();
-    UiLib.SelectBox.checkedHandler = function(event, state){
+	 var $pages = null;
+	  jQuery(document).ready(function(e) {
+		 
+      UiLib.SelectBox.checkedHandler = function(event, state){
         var curImg = $(state.target).find("img");
         if(state.checked){
             curImg.attr("src",curImg.attr("src").replace(".jpg","_on.jpg"));
@@ -213,60 +215,21 @@
     };
     
     UiLib.SelectBox.InitlizeComplete = function(event, state){
+		 
        if(state.target.getObj().id == "sel_1"){
            state.target.selectIndex(1);
            state.target.setMutux(false);
+		   
        }else{
            state.target.selectIndex(0);
        }
     }
-      
-</script>
-
-<script type="text/javascript" src="http://image.benlailife.com/SpecialJs/benlai_effects.js"></script>
-<script type="text/javascript">
-$(function () {
-var fader = new Fader({
-container: "#fader_container",
-fadeList: "#fader",
-switchList: "#switch",
-switchOn: "http://image.benlailife.com/adpicture/subject/alasijia/dianOn.png",
-switchOff: "http://image.benlailife.com/adpicture/subject/alasijia/dian.png",
-prev: "#prev",
-next: "#next",
-speed: "400",
-duration: "6000"
-});
-});
-</script>
-<script type="text/javascript">
- $(document).ready(function () {
-
-	$("[data-toggle]").click(function () {
-		var content = $(this).attr("data-toggle");
-		$("[toggle-content]").hide().filter("[toggle-content=" + content + "]").show();
-		smoothScroll(init_top);
-	});
 	
-	var nav_height = $("#nav").height();
-	$("#toSale").bind("click", function () {
-		$("[toggle-content]").hide().filter("[toggle-content=presale]").show();
-		smoothScroll($("#sale").offset().top - nav_height);
-	});
-
-	$("#toScene").bind("click", function () {
-		$("[toggle-content]").hide().filter("[toggle-content=about]").show();
-		smoothScroll($("#scene").offset().top - nav_height);
-	});
-
-	$("#toLegend").bind("click", function () {
-		$("[toggle-content]").hide().filter("[toggle-content=about]").show();
-		smoothScroll($("#legend").offset().top - nav_height);
-	});
-
-
-});
+	 UiLib.SelectBox.Initlize();
+    });
+	
+  
+     
 </script>
-    </body>
-</html>
+
 
